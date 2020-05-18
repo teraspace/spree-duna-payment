@@ -1,0 +1,30 @@
+ <% if @credit_cards.present? %>
+      <div id="existing_cards" class="payment-sources-existing-cards">
+    
+        <div class="form-group" data-hook="existing_cards">
+          <div class="d-flex flex-column payment-sources-list" style="display: inline !important;" >
+            <% @credit_cards.each do |card| %>
+              <div id="<%= dom_id(card,'spree')%>" class="payment-sources-list-item"  style="display: inline !important;">
+                <label class="spree-label">
+                  <%= credit_card_icon(card.cc_type) %>
+                  <span>****<%= card.last_digits %>,&nbsp</span>
+                  <span><%= card.name %></span>
+                </label>
+                
+                <div class= "shopping-cart-item-delete d-none d-lg-table-cell"  data-hook="cart_item_delete">
+                  <%= link_to '/credit_cards/'+card.id.to_s, method: :delete, class: 'delete', id: "delete_"+card.id.to_s , data: { turbolinks: false } do %>
+                    <%= icon(name: 'garbage',
+                            classes: 'shopping-cart-item-delete-icon',
+                            width: 18.9,
+                            height: 17)  %>
+                  <% end %>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+
+      </div>
+    <% else %>
+        <%= link_to Spree.t(:add_new_credit_cards),  spree.credit_cards_new_path, class: 'account-page-new-address-link', method: :get %>
+  <% end %>
