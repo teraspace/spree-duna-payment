@@ -4,19 +4,20 @@ This Spree Extension will not require run generators because was developend  usi
 
 ## Installation
 
+
 1. Add this extension to your Gemfile with this line:
 
     ```ruby
     gem 'spree-duna-payment', github: 'git@github.com:DUNA-E-Commmerce/spree-duna-payment.git'
     ```
-
+ So make sure you have privileges to access this repo through ssh.
 2. Install the gem using Bundler
 
     ```ruby
     bundle install
     ```
 
-3. Copy & run migrations
+3. Copy & run migrations (Rails standard but not necessary on this version)
 
     ```ruby
     bundle exec rails g spree_duna_credit_card_manager:install

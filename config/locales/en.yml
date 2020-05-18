@@ -3,3 +3,11 @@
 
 en:
   hello: "Hello world"
+  spree:
+    credit_cards:
+      successfully_removed: "Credit card has been successfully removed."
+      successfully_created: "Credit card has been successfully created."
+      successfully_saved: "Saved successfully"
+      successfully_updated: "Updated successfully"
+      unsuccessfully_updated: "There was an update while trying to update your address"
+      save: "Save"
